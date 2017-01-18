@@ -35,7 +35,7 @@ class NotesAppPage extends React.Component {
     }
 
     deleteEntry(entry) {
-        this.props.actions.deleteNote(entry)
+        this.props.actions.deleteNote(entry);
     }
 
     render() {

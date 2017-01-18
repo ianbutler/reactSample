@@ -17,7 +17,6 @@ function addNoteSuccess(note) {
 }
 
 function deleteNoteSuccess(notes) {
-    console.log("deleteNoteSuccess call")
     return {
         type: types.DELETE_NOTE_SUCCESS,
         notes
@@ -46,7 +45,6 @@ export function addNote(noteToAdd) {
 }
 
 export function deleteNote(noteToDelete) {
-    console.log('deleteNote actionCall()')
     return dispatch => {
         return NotesApi.deleteNote(noteToDelete).then(notes => {
             dispatch(deleteNoteSuccess(notes));

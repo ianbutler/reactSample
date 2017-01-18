@@ -11,7 +11,6 @@ export default function notesReducer(state = initialState.notes, action) {
         case types.LOAD_NOTES_SUCCESS:
             return action.notes;
         case types.DELETE_NOTE_SUCCESS:
-            debugger;
             return [...action.notes];
         default:
             return state;
