@@ -1,0 +1,26 @@
+
+// color palette from lightest to darkest
+$color5: #DBE9EE;
+$color4: #C0D6DF;
+$color3: #4A6FA5;
+$color2: #166088;
+$color1: #4F6D7A;
+
+body {
+    background-color: $color5;
+    color: $color1;
+}
+
+a {
+    color: $color3;
+    &:hover {
+        color: $color2;
+    }
+}
+
+.header {
+    font-size: 24px;
+    * {
+        font-size: 24px;
+    }
+}

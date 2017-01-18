@@ -5,8 +5,9 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
-import './styles/styles.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/styles.scss';
 
 import HomePage from './components/home/HomePage';
 
