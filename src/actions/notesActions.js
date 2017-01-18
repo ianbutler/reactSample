@@ -2,21 +2,27 @@ import * as types from './actionTypes';
 import NotesApi from '../api/notesApi';
 
 // action creators
-export function loadNotesSuccess(notes) {
+function loadNotesSuccess(notes) {
     return {
         type: types.LOAD_NOTES_SUCCESS,
         notes
     };
 }
 
-export function addNoteSuccess(note) {
+function addNoteSuccess(note) {
     return {
         type: types.ADD_NOTE_SUCCESS,
         note
     };
 }
 
-
+function deleteNoteSuccess(notes) {
+    console.log("deleteNoteSuccess call")
+    return {
+        type: types.DELETE_NOTE_SUCCESS,
+        notes
+    };
+}
 
 //thunks
 export function loadNotes() {
@@ -35,6 +41,15 @@ export function addNote(noteToAdd) {
             dispatch(addNoteSuccess(note));
         }).catch(error => {
             throw(error);
+        });
+    };
+}
+
+export function deleteNote(noteToDelete) {
+    console.log('deleteNote actionCall()')
+    return dispatch => {
+        return NotesApi.deleteNote(noteToDelete).then(notes => {
+            dispatch(deleteNoteSuccess(notes));
         });
     };
 }

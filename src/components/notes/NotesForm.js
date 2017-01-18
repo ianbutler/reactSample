@@ -1,13 +1,12 @@
 import React, {PropTypes} from 'react';
 
-const NotesForm = ({value, onChange, onSave}) => {
-
+const NotesForm = ({currentEntry, onChange, onSave}) => {
     return (
         <form>
             <div className="field">
                 <label htmlFor="textInput">Label</label>
                 <input
-                    value={value}
+                    value={currentEntry}
                     name="textInput"
                     type="text"
                     placeholder="enter stuff"
@@ -26,7 +25,7 @@ const NotesForm = ({value, onChange, onSave}) => {
 NotesForm.propTypes = {
     onSave: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
-    value: PropTypes.string
+    currentEntry: PropTypes.string
 };
 
 export default NotesForm;

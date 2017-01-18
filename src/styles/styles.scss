@@ -18,9 +18,23 @@ a {
     }
 }
 
+p {
+    margin-bottom: 0px;
+}
+
 .header {
     font-size: 24px;
     * {
         font-size: 24px;
     }
+}
+
+.actualNotes li {
+    height: 40px;
+}
+
+.alignItemsInContainer {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }

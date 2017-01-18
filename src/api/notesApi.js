@@ -24,11 +24,13 @@ class NotesApi {
     }
 
     static deleteNote(note) {
+        console.log("deleteNote call in API()", note);
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 const indexToDelete = notes.indexOf(note);
                 notes.splice(indexToDelete, 1);
-                resolve();
+                console.log("new Notes in API", notes);
+                resolve(notes);
             }, delay);
         });
     }

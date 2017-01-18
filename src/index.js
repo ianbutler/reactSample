@@ -7,6 +7,7 @@ import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 import { loadNotes } from './actions/notesActions';
 
+import './styles/reset.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
 

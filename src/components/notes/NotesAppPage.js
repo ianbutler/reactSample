@@ -15,6 +15,7 @@ class NotesAppPage extends React.Component {
 
         this.saveEntry = this.saveEntry.bind(this);
         this.updateEntry = this.updateEntry.bind(this);
+        this.deleteEntry = this.deleteEntry.bind(this);
     }
 
     saveEntry(event){
@@ -31,22 +32,25 @@ class NotesAppPage extends React.Component {
         return this.setState({
             currentEntry: event.target.value
         });
+    }
 
+    deleteEntry(entry) {
+        this.props.actions.deleteNote(entry)
     }
 
     render() {
-
         return (
             <div>
                 <h2>Notes App</h2>
                 <div>
                     <NotesForm
-                        value={this.currentEntry}
+                        currentEntry={this.state.currentEntry}
                         onChange={this.updateEntry}
                         onSave={this.saveEntry} />
 
                     <NotesList
-                        list={this.props.notes} />
+                        list={this.props.notes}
+                        onDelete={this.deleteEntry} />
                 </div>
             </div>
         );
