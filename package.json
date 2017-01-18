@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Sample React Redux app",
   "scripts": {
-    "prestart":   "babel-node tools/startMessage.js",
-    "start":      "npm-run-all --parallel open:src lint:watch test:watch",
-    "open:src":   "babel-node tools/srcServer.js",
-    "lint":       "node_modules/.bin/esw webpack.config.* src tools",
+    "prestart": "babel-node tools/startMessage.js",
+    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "open:src": "babel-node tools/srcServer.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test":       "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
+    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
   },
   "author": "Ian Butler",
@@ -27,7 +27,7 @@
     "toastr": "2.1.2"
   },
   "devDependencies": {
-    "babel-cli": "6.8.0",
+    "babel-cli": "^6.8.0",
     "babel-core": "6.8.0",
     "babel-loader": "6.2.4",
     "babel-plugin-react-display-name": "2.0.0",
