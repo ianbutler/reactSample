@@ -1,14 +1,15 @@
 import React, {PropTypes} from 'react';
-//import {connect} from 'react-redux';
-//import {bindActionCreators} from 'redux';
-//import * as courseActions from '../../actions/courseActions';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as notesActions from '../../actions/notesActions';
+import NotesForm from './NotesForm';
+import NotesList from './NotesList';
 
 class NotesAppPage extends React.Component {
     constructor(props, context) {
         super(props, context);
 
         this.state = {
-            list: [],
             currentEntry: ""
         };
 
@@ -19,13 +20,13 @@ class NotesAppPage extends React.Component {
     saveEntry(event){
         event.preventDefault();
 
-        let newList = this.state.list.slice();
-        newList.push(this.state.currentEntry);
-        this.setState({
-            list: newList
-        });
+        this.props.actions.addNote(this.state.currentEntry)
+            .then(() => {
+                this.setState({
+                    currentEntry: ""
+                });
+            });
     }
-
     updateEntry(event){
         return this.setState({
             currentEntry: event.target.value
@@ -34,37 +35,18 @@ class NotesAppPage extends React.Component {
     }
 
     render() {
+
         return (
             <div>
                 <h2>Notes App</h2>
                 <div>
-                    <form>
-                        <div className="field">
-                            <label htmlFor="textInput">Label</label>
-                            <input
-                                value={this.currentEntry}
-                                name="textInput"
-                                type="text"
-                                placeholder="enter stuff"
-                                className="form-control"
-                                onChange={this.updateEntry} />
-                        </div>
-                        <input
-                            type="submit"
-                            value="Save"
-                            onClick={this.saveEntry}
-                            className="btn btn-primary" />
-                    </form>
+                    <NotesForm
+                        value={this.currentEntry}
+                        onChange={this.updateEntry}
+                        onSave={this.saveEntry} />
 
-                    <div className="actualNotes">
-                        <ul>
-                            {this.state.list.map((listItem, index) => {
-                                return (
-                                    <li key={index}>{listItem}</li>
-                                );
-                            })}
-                        </ul>
-                    </div>
+                    <NotesList
+                        list={this.props.notes} />
                 </div>
             </div>
         );
@@ -73,19 +55,20 @@ class NotesAppPage extends React.Component {
 
 NotesAppPage.propTypes = {
     // myProp: PropTypes.string.isRequired
+    notes: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired
 };
 
-// function mapStateToProps(state, ownProps) {
-//     return {
-//         state: state
-//     };
-// }
-//
-// function mapDispatchToProps(dispatch) {
-//     return {
-//         state: bindActionCreators(courseActions, dispatch)
-//     };
-// }
+function mapStateToProps(state, ownProps) {
+    return {
+        notes: state.notesReducer
+    };
+}
 
-//export default connect(mapStateToProps, mapDispatchToProps)(NotesAppPage);
-export default NotesAppPage;
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(notesActions, dispatch)
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NotesAppPage);

@@ -1,4 +1,3 @@
-// export default {
-//     authors: [],
-//     courses: []
-// };
+export default {
+    notes: []
+};
