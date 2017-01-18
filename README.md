@@ -10,9 +10,11 @@ It is still a work in progress, but I wanted to show that I understand and know 
 On the agenda for this repo...
 
     * add delete functionality to notes app
-	
+
     * style it
-	
+
     * create a application state log that would be visible on the home page
-	
-    * possibly add some other feature that might be cool 
+
+    * possibly add some other feature that might be cool
+
+    * testing 
