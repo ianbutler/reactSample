@@ -10,7 +10,7 @@ const NotesList = ({list, onDelete}) => {
                             <div className="alignItemsInContainer">
                                 <p>{index + 1}. {listItem}</p>
                                 <button
-                                    onClick={onDelete}
+                                    onClick={() => {onDelete(listItem)}}
                                     className="btn btn-danger">Remove</button>
                             </div>
                         </li>
