@@ -20,7 +20,8 @@ export default {
 		contentBase: path.resolve(__dirname, 'src')
 	},
 	plugins : [
-		new webpack.HotModuleReplacementPlugin(), new webpack.NoErrorsPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin()
 	],
 	module : {
 		loaders: [
