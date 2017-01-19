@@ -11,8 +11,6 @@ On the agenda for this repo...
 
     * style it
 
-    * create a application state log that would be visible on the home page
-
     * possibly add some other feature that might be cool
 
     * testing
