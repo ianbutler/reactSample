@@ -7,10 +7,10 @@ It is still a work in progress, but I wanted to show that I understand and know 
 
 On the agenda for this repo...
 
-    * figure out how to break apart objects and display object state on home page
+    * break apart object state and display it on home page
 
     * possibly add some other feature that might be cool
 
-    * testing
-
     * add spinner (or something like that) to ease the waiting during api calls
+
+    * testing
