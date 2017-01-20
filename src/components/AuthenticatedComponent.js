@@ -17,7 +17,7 @@ export function requireAuthentication(Component) {
         checkAuth() {
             if (this.props.token != "fakeToken") {
                  browserHistory.goBack();
-                 alert("Not authenticated")
+                 alert("Not authenticated");
                 //this.props.dispatch(push('/'));
             }
         }
@@ -37,7 +37,8 @@ export function requireAuthentication(Component) {
     AuthenticatedComponent.propTypes = {
         dispatch: PropTypes.func,
         location: PropTypes.object,
-        isAuthenticated: PropTypes.bool
+        isAuthenticated: PropTypes.bool,
+        token: PropTypes.string
     };
 
     function mapStateToProps(state) {

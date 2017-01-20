@@ -6,11 +6,9 @@ const HomePageList = ({title, dataArr, dataObj}) => {
         dataDisplay = dataArr.map((item, index) => {
             return <p key={index}>{item}</p>;
         });
-        console.log("dataDisplay", dataDisplay);
-    } else if (dataObj) {
-        console.log("dataObj", ...dataObj);
-        dataDisplay = "blah"
 
+    } else if (dataObj) {
+        dataDisplay = "blah";
     }
 
     return (

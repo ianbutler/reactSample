@@ -1,6 +1,6 @@
 export default {
-    notes: [],
-    user: {
+    notesReducer: [],
+    loginReducer: {
         user:{},
         token:"",
         isAuthenticated: false

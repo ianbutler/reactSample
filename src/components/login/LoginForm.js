@@ -22,7 +22,6 @@ const LoginForm = ({onSubmit, onChange, passwordValue, emailValue}) => {
 };
 
 LoginForm.propTypes = {
-    // myProp: PropTypes.string.isRequired
     onSubmit: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
     passwordValue: PropTypes.string.isRequired,

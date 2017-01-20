@@ -12,7 +12,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
 
 const store = configureStore();
-store.dispatch(loadNotes());
+if (!localStorage.getItem('reduxState')) {
+    store.dispatch(loadNotes());
+}
+store.subscribe(() => {
+    console.log("subscribe()", JSON.stringify(store.getState()));
+    localStorage.setItem('reduxState', JSON.stringify(store.getState()));
+});
 
 render (
     <Provider store={store}>

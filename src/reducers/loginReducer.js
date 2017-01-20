@@ -1,11 +1,17 @@
 import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
-export default function loginReducer(state = initialState.user, action) {
+let stateForUse = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : initialState;
+
+export default function loginReducer(state = stateForUse.loginReducer, action) {
     switch (action.type) {
         case types.LOGIN_SUCCESS:
-            console.log("LOGIN_SUCCESS action.userData", action.userData);
             return Object.assign({}, action.userData);
+        case types.LOGOUT_SUCCESS:
+            return Object.assign(
+                {},
+                state.loginReducer
+            );
         default:
             return state;
     }

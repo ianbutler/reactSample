@@ -1,7 +1,10 @@
 import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
-export default function notesReducer(state = initialState.notes, action) {
+let stateForUse = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : initialState;
+console.log('stateForUse', stateForUse);
+export default function notesReducer(state = stateForUse.notesReducer, action) {
+    debugger;
     switch (action.type) {
         case types.ADD_NOTE_SUCCESS:
             return [
