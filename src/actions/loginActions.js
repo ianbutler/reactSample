@@ -9,8 +9,7 @@ function loginSuccess(user){
     };
 }
 
-export function logout() {
-    localStorage.clear();
+function logoutSuccess(){
     return {
         type: types.LOGOUT_SUCCESS
     };
@@ -22,6 +21,16 @@ export function login(userData) {
     return dispatch => {
         return LoginApi.verifyUser(userData).then(data => {
             dispatch(loginSuccess(data));
+        }).catch(error => {
+            throw(error);
+        });
+    };
+}
+
+export function logout() {
+    return dispatch => {
+        return LoginApi.logout().then(data => {
+            dispatch(logoutSuccess(data));
         }).catch(error => {
             throw(error);
         });

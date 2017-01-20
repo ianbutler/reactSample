@@ -8,9 +8,10 @@ export default function loginReducer(state = stateForUse.loginReducer, action) {
         case types.LOGIN_SUCCESS:
             return Object.assign({}, action.userData);
         case types.LOGOUT_SUCCESS:
+            localStorage.clear();
             return Object.assign(
                 {},
-                state.loginReducer
+                initialState.loginReducer
             );
         default:
             return state;

@@ -13,10 +13,7 @@ class App extends React.Component {
     }
 
     logout() {
-        loginActions.logout()
-            .then(() => {
-                console.log("logged out...");
-            });
+        this.props.actions.logout();
     }
 
     render() {
@@ -34,7 +31,9 @@ class App extends React.Component {
 
 App.propTypes = {
     children: PropTypes.object.isRequired,
-    state: PropTypes.object
+    state: PropTypes.object,
+    dispatch: PropTypes.func,
+    actions: PropTypes.object
 };
 
 function mapStateToProps(state, ownProps) {
@@ -49,4 +48,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -33,11 +33,5 @@ export function transition(Component) {
         };
     }
 
-    // function mapDispatchToProps(dispatch) {
-    //     return {
-    //         state: bindActionCreators(courseActions, dispatch)
-    //     };
-    // }
-
     return connect(mapStateToProps)(Transition);
 }

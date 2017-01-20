@@ -26,6 +26,14 @@ class LoginApi {
             }, delay);
         });
     }
+
+    static logout() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve();
+            }, 0);
+        });
+    }
 }
 
 export default LoginApi;
