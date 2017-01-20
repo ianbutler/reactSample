@@ -11,6 +11,10 @@ On the agenda for this repo...
 
     * style it
 
+    * add logout functionality
+
+    * figure out how to break apart objects and display object state on home page
+
     * possibly add some other feature that might be cool
 
     * testing
