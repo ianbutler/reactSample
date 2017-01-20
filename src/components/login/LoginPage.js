@@ -1,10 +1,10 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import TextInput from '../common/TextInput';
 import LoginApi from '../../api/loginApi';
 import * as loginActions from '../../actions/loginActions';
 import {browserHistory} from 'react-router';
+import LoginForm from './LoginForm';
 
 class LoginPage extends React.Component {
     constructor(props, context) {
@@ -29,7 +29,7 @@ class LoginPage extends React.Component {
         this.props.actions.login({
             email: this.state.email,
             password: this.state.password
-        }).then(() => {            
+        }).then(() => {
             browserHistory.push('/notes');
         });
     }
@@ -38,28 +38,20 @@ class LoginPage extends React.Component {
         return (
             <div>
                 <h1>Login Page</h1>
-                <form onSubmit={this.submitForm}>
-                    <TextInput
-                        type="email"
-                        value={this.state.email}
-                        placeholder="Email goes here"
-                        onChange={this.onChange} />
-                    <TextInput
-                        type="password"
-                        value={this.state.password}
-                        placeholder="Password"
-                        onChange={this.onChange} />
-                    <input
-                        type="submit"
-                        className="btn btn-primary" />
-                </form>
+                <LoginForm
+                    onSubmit={this.submitForm}
+                    onChange={this.onChange}
+                    passwordValue={this.state.password}
+                    emailValue={this.state.email} />
+                <p>Only email/pw combo that will work (because I mocked the api and this is hardcoded in):</p>
+                <p>Email: user@email.com</p>
+                <p>Password: 1234</p>
             </div>
         );
     }
 }
 
 LoginPage.propTypes = {
-    // myProp: PropTypes.string.isRequired
     actions: PropTypes.object.isRequired
 };
 
