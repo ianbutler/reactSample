@@ -36,16 +36,23 @@ class LoginPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="loginContainer">
                 <h1>Login Page</h1>
                 <LoginForm
                     onSubmit={this.submitForm}
                     onChange={this.onChange}
                     passwordValue={this.state.password}
                     emailValue={this.state.email} />
-                <p>Only email/pw combo that will work (because I mocked the api and this is hardcoded in):</p>
-                <p>Email: user@email.com</p>
-                <p>Password: 1234</p>
+                <div className="panel panel-default">
+                    <div className="panel-heading">
+                        <p>**Because I mocked the api and this is hardcoded...</p>
+                        <p>**Only email/pw combo that will work:</p>
+                    </div>
+                    <div className="panel-body">
+                        <p>Email: user@email.com</p>
+                        <p>Password: 1234</p>
+                    </div>
+                </div>
             </div>
         );
     }

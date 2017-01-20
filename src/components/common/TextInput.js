@@ -1,14 +1,17 @@
 import React, {PropTypes} from 'react';
 
-const TextInput = ({value, type, placeholder, onChange, name}) => {
+const TextInput = ({value, type, placeholder, label, onChange, name}) => {
     return (
-        <input
-            value={value}
-            name={name}
-            type={type}
-            placeholder={placeholder}
-            className="form-control"
-            onChange={onChange} />
+        <div className="form-group">
+            <label>{label}</label>
+            <input
+                value={value}
+                name={name}
+                type={type}
+                placeholder={placeholder}
+                className="form-control"
+                onChange={onChange} />
+        </div>
     );
 };
 
@@ -18,7 +21,8 @@ TextInput.propTypes = {
     placeholder: PropTypes.string,
     onChange: PropTypes.func.isRequired,
     name: PropTypes.string,
-    value: PropTypes.string.isRequired
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string
 };
 
 export default TextInput;

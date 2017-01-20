@@ -15,8 +15,7 @@ const store = configureStore();
 if (!localStorage.getItem('reduxState')) {
     store.dispatch(loadNotes());
 }
-store.subscribe(() => {
-    console.log("subscribe()", JSON.stringify(store.getState()));
+store.subscribe(() => {    
     localStorage.setItem('reduxState', JSON.stringify(store.getState()));
 });
 

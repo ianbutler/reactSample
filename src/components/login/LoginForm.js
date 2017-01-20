@@ -3,14 +3,16 @@ import TextInput from '../common/TextInput';
 
 const LoginForm = ({onSubmit, onChange, passwordValue, emailValue}) => {
     return (
-        <form onSubmit={onSubmit}>
+        <form className="loginForm" onSubmit={onSubmit}>
             <TextInput
                 type="email"
+                label="Email"
                 value={emailValue}
                 placeholder="Email goes here"
                 onChange={onChange} />
             <TextInput
                 type="password"
+                label="Password"
                 value={passwordValue}
                 placeholder="Password"
                 onChange={onChange} />
