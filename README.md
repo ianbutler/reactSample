@@ -12,3 +12,5 @@ On the agenda for this repo...
     * possibly add some other feature that might be cool
 
     * testing
+
+    * add spinner (or something like that) to ease the waiting during api calls
