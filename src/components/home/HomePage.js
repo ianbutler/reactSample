@@ -21,6 +21,9 @@ class HomePage extends React.Component {
                 <HomePageList
                     title="Notes"
                     dataArr={this.props.state.notesReducer} />
+                <HomePageList
+                    title="User"
+                    dataObj={this.props.state.loginReducer} />
             </div>
         );
     }

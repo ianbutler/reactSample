@@ -1,16 +1,16 @@
 import React, {PropTypes} from 'react';
+import TextInput from '../common/TextInput';
 
 const NotesForm = ({currentEntry, onChange, onSave}) => {
     return (
         <form>
             <div className="field">
                 <label htmlFor="textInput">Label</label>
-                <input
+                <TextInput
                     value={currentEntry}
                     name="textInput"
                     type="text"
                     placeholder="enter stuff"
-                    className="form-control"
                     onChange={onChange} />
             </div>
             <input

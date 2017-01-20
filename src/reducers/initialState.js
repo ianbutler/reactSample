@@ -1,3 +1,8 @@
 export default {
-    notes: []
+    notes: [],
+    user: {
+        user:{},
+        token:"",
+        isAuthenticated: false
+    }
 };
