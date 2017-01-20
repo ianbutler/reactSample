@@ -5,12 +5,12 @@ const NotesForm = ({currentEntry, onChange, onSave}) => {
     return (
         <form>
             <div className="field">
-                <label htmlFor="textInput">Label</label>
                 <TextInput
                     value={currentEntry}
                     name="textInput"
                     type="text"
-                    placeholder="enter stuff"
+                    label="Enter Your Note Here"
+                    placeholder="...notes"
                     onChange={onChange} />
             </div>
             <input

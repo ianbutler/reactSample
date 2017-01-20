@@ -40,14 +40,13 @@ class NotesAppPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="contentContainer narrowContainer">
                 <h2>Notes App</h2>
                 <div>
                     <NotesForm
                         currentEntry={this.state.currentEntry}
                         onChange={this.updateEntry}
                         onSave={this.saveEntry} />
-
                     <NotesList
                         list={this.props.notes}
                         onDelete={this.deleteEntry} />

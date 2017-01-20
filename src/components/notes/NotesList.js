@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import Note from './Note';
 
 const NotesList = ({list, onDelete}) => {
     return (
@@ -6,14 +7,11 @@ const NotesList = ({list, onDelete}) => {
             <ul>
                 {list.map((listItem, index) => {
                     return (
-                        <li key={index}>
-                            <div className="alignItemsInContainer">
-                                <p>{index + 1}. {listItem}</p>
-                                <button
-                                    onClick={() => {onDelete(listItem)}}
-                                    className="btn btn-danger">Remove</button>
-                            </div>
-                        </li>
+                        <Note
+                            key={index}
+                            index={index}
+                            listItem={listItem}
+                            onDelete={onDelete} />
                     );
                 })}
             </ul>

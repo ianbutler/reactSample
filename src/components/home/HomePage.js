@@ -15,7 +15,7 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="contentContainer">
                 <h1>Home Page</h1>
                 <h2>Current State of this application:</h2>
                 <HomePageList

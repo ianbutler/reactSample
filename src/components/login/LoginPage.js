@@ -36,7 +36,7 @@ class LoginPage extends React.Component {
 
     render() {
         return (
-            <div className="loginContainer">
+            <div className="narrowContainer contentContainer">
                 <h1>Login Page</h1>
                 <LoginForm
                     onSubmit={this.submitForm}
@@ -75,4 +75,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
-//export default LoginPage;
