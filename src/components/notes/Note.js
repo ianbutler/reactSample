@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import {transition} from '../../transition';
 
 const Note = ({index, listItem, onDelete}) => {
     return (
@@ -19,4 +20,4 @@ Note.propTypes = {
     listItem: PropTypes.string
 };
 
-export default Note;
+export default transition(Note);
